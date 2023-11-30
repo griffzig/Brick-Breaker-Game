@@ -70,9 +70,38 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        time.start();
+        timer.start();
         if (play) {
-            // detect intersection of 2 objects
+            // detect interaction of 2 objects: ball and paddle
+            if (new Rectangle(ballXCoord, ballYCoord, 20, 20).intersects(new Rectangle(player1, 550, 100, 8))) {
+                ballYDir = -ballYDir;
+            }
+            // detect ball and brick interaction
+            for (int i = 0; i < map.map.length; i++) {
+                for (int j = 0; j < map.map[0].length; j++) {
+                    if (map.map[i][j] > 0) {
+                        // determine ball's course based on position and direction
+
+                    }
+                }
+            }
         }
     }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        // detect use of the key that causes action
+    }
+
+    
 }
